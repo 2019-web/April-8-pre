@@ -1,0 +1,17 @@
+<div id="search-component">
+  <h2>学生搜索</h2>
+  <input nz-input nzSize="large" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <nz-list
+    class="search-result"
+    nzBordered
+    nzSize="small"
+    nzNoResult="暂无数据"
+  >
+    <nz-list-item class="li" *ngFor="let student of students$ | async" >
+      <a routerLink="/detail/{{student.id}}">
+        {{student.name}}
+      </a>
+    </nz-list-item>
+  </nz-list>
+</div>

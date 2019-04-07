@@ -1,0 +1,45 @@
+<nz-layout>
+  <nz-sider [nzWidth]="240" style="background:#fff">
+    <ul nz-menu [nzMode]="'inline'" style="height:100%">
+      <li nz-submenu>
+        <span title><i nz-icon type="user"></i>课程1</span>
+        <ul>
+          <li nz-menu-item>章节1</li>
+          <li nz-menu-item>章节2</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i nz-icon type="user"></i>课程2</span>
+        <ul>
+          <li nz-menu-item>章节1</li>
+          <li nz-menu-item>章节2</li>
+        </ul>
+      </li>
+      <li nz-submenu>
+        <span title><i nz-icon type="user"></i>课程3</span>
+        <ul>
+          <li nz-menu-item>章节1</li>
+          <li nz-menu-item>章节2</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout style="padding:0 24px 24px">
+    <nz-breadcrumb style="margin:16px 0;">
+      <nz-breadcrumb-item>主页</nz-breadcrumb-item>
+    </nz-breadcrumb>
+    <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+      <h2>优秀学生</h2>
+      <div class="grid grid-pad">
+        <a *ngFor="let student of students" class="col-1-4" routerLink="/detail/{{student.id}}">
+          <div class="module student">
+            <h3>{{student.name}}</h3>
+          </div>
+        </a>
+        <nz-spin style="margin: 30px" *ngIf="!students?.length" nzTip="加载中，请稍后" nzSimple nzSize="large"></nz-spin>
+      </div>
+      <app-student-search></app-student-search>
+      <app-log></app-log>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

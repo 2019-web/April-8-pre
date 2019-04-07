@@ -1,0 +1,12 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo">{{ title }}</div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+      <li nz-menu-item nzSelected><a routerLink="/index">主页</a></li>
+      <li nz-menu-item><a routerLink="/students">学生</a></li>
+      <li nz-menu-item><a>课程</a></li>
+    </ul>
+  </nz-header>
+  <router-outlet></router-outlet>
+</nz-layout>
+<nz-footer style="text-align: center">复旦大学 高级WEB Demo</nz-footer>

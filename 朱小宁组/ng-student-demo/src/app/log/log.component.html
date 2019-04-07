@@ -1,0 +1,5 @@
+<div *ngIf="logService.messages.length">
+  <h2>日志</h2>
+  <div *ngFor="let message of logService.messages">{{message}}</div>
+  <button nz-button nzType="danger" (click)="logService.clear()">清空</button>
+</div>
